@@ -4,6 +4,7 @@
 
 *Photos* serves as a repository to settle photos uploaded to the server
 
+```
 photos
     ├── faceid_1
     │   ├── 1.jpg
@@ -15,4 +16,4 @@ photos
     └── faceid_3
         ├── a.jpeg
         └── b.png
-
+```
