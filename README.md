@@ -25,7 +25,7 @@ python3 face.py
 ```python
 # face.py
 
-​```
+​'''
 #异常捕捉
 @app.errorhandler(404)
 def error404(error):
@@ -36,7 +36,7 @@ def error500(error):
 @app.errorhandler(400)
 def error400(error):
     return response().error().message("未知错误").make()   
-​```
+​'''
   
 if __name__ == "__main__":
     redis = redis(app.config['REDIS_HOST'],app.config['REDIS_PORT'],app.config['REDIS_PASSWORD'],app.config['REDIS_PREFIX'])
