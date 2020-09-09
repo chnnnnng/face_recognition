@@ -141,6 +141,8 @@ vacuum = true
 #     photos  必须
 @app.route('/upload', methods=['POST'])
 ```
+> 注意：注册人脸和添加人脸时，图片的文件名不能出现非ascii字符（当然，你可以用secure_filename来过滤非ascii字符，但是这样的话对于一些名字全部是中文/日文的图片，会引发异常。因此建议在调用api上传之前，提前修改文件名，如使用 secure_filename过滤 再与 随机字符串拼接）
+
 
 ```python
 #查询人脸照片
@@ -148,6 +150,7 @@ vacuum = true
 #参数：faceid 必须
 @app.route('/photos', methods=['GET'])
 ```
+> 如果上传的照片检测不到人脸，会带来502错误，但是我懒得改了，可以自己在异常捕捉里加一条，或者在predict前判断是否是人脸！
 
 ```python
 #查看某一张照片

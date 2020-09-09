@@ -288,4 +288,4 @@ def _set_b_2_list_str(set):
 
 if __name__ == "__main__":
     redis = redis(app.config['REDIS_HOST'],app.config['REDIS_PORT'],app.config['REDIS_PASSWORD'],app.config['REDIS_PREFIX'])
-    app.run(host='0.0.0.0', port=80, debug=False)
+    app.run(host='0.0.0.0', port=88, debug=False)
