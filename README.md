@@ -2,7 +2,7 @@
 
 ## 前言
 
-> 本项目人脸识别核心采用 [ageitgey/face_recognition](https://github.com/ageitgey/face_recognition)，一个一个强大、简单、易上手的人脸识别开源项目，并且配备了完整的开发文档和应用案例，特别是兼容树莓派系统。
+> 本项目人脸识别核心采用 [ageitgey/face_recognition](https://github.com/ageitgey/face_recognition)，一个强大、简单、易上手的人脸识别开源项目，并且配备了完整的开发文档和应用案例，特别是兼容树莓派系统。
 >
 > 因此在Clone前，你要先[安装face_recognition环境](https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md#%E5%AE%89%E8%A3%85)（雾）
 >
