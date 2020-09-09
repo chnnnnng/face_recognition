@@ -34,6 +34,7 @@ app.config['REDIS_PREFIX'] = 'FRS:'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
 
 #开启redis
+#如果使用python3 face.py 的方式运行，务必注释此行
 redis = redis(app.config['REDIS_HOST'],app.config['REDIS_PORT'],app.config['REDIS_PASSWORD'],app.config['REDIS_PREFIX'])
 
 #中间件 安全检测
@@ -176,10 +177,11 @@ def recognize():
         return response().error().message("未上传").make()
     photo = request.files['photo']
     if photo and _is_allowed_file(photo.filename):
-        start = perf_counter()
-        resl = predict(photo, model_path="trained_knn_model.clf")
-        elapsed = (perf_counter() - start)
-        return response().succeed().message("识别完毕！FaceId:"+resl[0][0]+"。耗时："+str(elapsed)+"秒").setdata(resl).make()
+        if _is_human_face(photo):
+            start = perf_counter()
+            resl = predict(photo, model_path="trained_knn_model.clf")
+            elapsed = (perf_counter() - start)
+            return response().succeed().message("识别完毕！FaceId:"+resl[0][0]+"。耗时："+str(elapsed)+"秒").setdata(resl).make()
     return response().error().message("识别失败").make()
 
 
